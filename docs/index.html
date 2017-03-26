@@ -23,6 +23,14 @@
       .remark-code { font-size: 0.8em; }
       .remark-slide-number { font-size: 0.8em; }
       .remark-slide-content ul { line-height: 1.4em; }
+
+      .small { font-size: 0.7em; }
+
+      img { max-width: 100%; }
+      blockquote {
+        font-style: italic;
+        color: #777;
+      }
     </style>
   </head>
   <body>
@@ -60,9 +68,10 @@ of requirements for cloud applications.
 # Brief history of cloud computing
 
 * 2006 - Amazon Web Services
+* 2007 - Heroku (PaaS)
 * 2010 - Microsoft Azure
-* 2010 - OpenStack
-* 2011 - OpenShift
+* 2010 - OpenStack (IaaS)
+* 2011 - OpenShift (PaaS)
 * 2011 - Google Cloud Platform
 
 ## In general
@@ -129,8 +138,9 @@ of requirements for cloud applications.
 
 Better integrated management tools enable easier and more effective deployment of cloud infrastructure.
 
-TODO openstack success story how it decreased deployment time OR picture
+> Deploying new applications used to take the bank 8–12 weeks. Now it's done in just a few hours. New applications are delivered faster, with better quality, improving service for internal and external customers. [*]
 
+.small[[*] https://www.redhat.com/en/resources/mufg-union-bank-serves-customers-faster-private-cloud-red-hat]
 ---
 
 ## Before (hours to days)
@@ -145,6 +155,200 @@ TODO openstack success story how it decreased deployment time OR picture
 * Selects virtual server template
 * Creates new machine in couple of mouse clicks
 * Once the virtual server boots, it's ready to use
+
+---
+
+# Cheaper services
+
+Usually:
+* no upfront costs
+* no termination fees
+* pay-as-you-go
+  * unit of resource per hour
+
+### Google Compute Engine example
+
+* $0.033174 / vCPU hour
+* $0.004446 / GB hour
+
+---
+
+# XaaS
+
+Everything as a service:
+* HaaS - Hardware as a Service
+* IaaS - Infrastructure as a Service
+* PaaS - Platform as a Service
+* SaaS - Software as a Service
+* ...
+
+---
+
+# Infrastructure as a Service
+
+* Virtual Machines
+* Networking
+* Storage
+
+### Ability to
+
+* Use custom / to modify Operating System
+
+---
+
+## Networking
+
+* SDN - Software defined networking
+* Custom networks, subnets
+* Custom firewall rules
+* Custom DNS
+
+
+* OpenvSwitch
+* OpenDaylight
+
+---
+
+## Storage
+
+Block storage:
+* Block device (disk)
+* Needs to be attached to the virtual server
+* Easy to use, well supported
+
+Object Storage:
+* Cloud native storage
+* Every object has ID - URI
+* REST API - HTTP GET, PUT
+
+
+* Amazon S3
+
+---
+
+## Storage II
+
+Shared / Distributed Filesystem
+* Cloud native
+* Spans across multiple devices / servers
+* Enables concurrent writes
+
+
+* GlusterFS (distributed fs)
+* Ceph (block &amp; object storage, distributed fs)
+
+---
+
+# IaaS (OpenStack)
+
+![IaaS](img/iaas.png)
+
+---
+
+# Platform as a Service
+
+* Application platform
+* Languages, libraries, frameworks
+
+### Ability to
+
+* Deploy custom application
+
+### Not possible to
+
+* Manage OS
+
+---
+
+# PaaS (OpenShift)
+
+![PaaS](img/paas.svg)
+
+---
+
+# Software as a Service
+
+* Access to specific software
+
+### Ability to
+
+* Immediately use application
+
+### Not possible to
+
+* Change application
+
+---
+
+# Saas (CD as a Service)
+
+![SaaS](img/saas.png)
+
+---
+
+# Classification of cloud types
+
+* Public cloud
+* Private cloud
+  * Dedicated Cloud
+* Hybrid cloud
+
+---
+
+# Public cloud
+
+* Publicly available, shared with others
+* Cost effective, ready to use
+
+
+* Amazon Web Services
+* Google Cloud Platform
+* Microsoft Azure
+
+---
+
+# Private cloud
+
+* On premise, usually for internal use
+* Might be partially available to public
+* Exclusively used by owner
+* More expensive, requires set up period
+
+
+* OpenStack
+* CloudStack
+* Eucalyptus
+* OpenShift
+* Mesos
+
+---
+
+# Dedicated cloud
+
+* Managed by provider, for single customer
+
+
+* OpenStack
+* OpenShift
+
+---
+
+# Hybrid cloud
+
+* Integrated cloud service utilizing both private and public clouds
+
+
+* CloudForms
+
+---
+
+![Hybrid Cloud](img/hybrid-cloud.gif)
+
+---
+
+class: center, middle
+
+# Questions?
 
     </textarea>
     <script src="remark-latest.min.js">
