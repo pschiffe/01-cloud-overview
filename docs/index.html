@@ -9,11 +9,20 @@
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
       body { font-family: 'Droid Serif'; }
-      h1, h2, h3 {
+      h1, h2, h3, h4 {
         font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .remark-slide-content { font-size: 1.6em; }
+      .remark-slide-content h1 { font-size: 2.4em; }
+      .remark-slide-content h2 { font-size: 2.0em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .remark-slide-content h4 { font-size: 1.2em; }
+      .remark-code { font-size: 0.8em; }
+      .remark-slide-number { font-size: 0.8em; }
+      .remark-slide-content ul { line-height: 1.4em; }
     </style>
   </head>
   <body>
@@ -21,18 +30,107 @@
 
 class: center, middle
 
-# Introduction to Cloud Computing
+# Basic principles of Cloud applications and their architectural styles
 
-A Software Architecture lecture
+### A Software Architecture lecture
 
-Peter Schiffer, Red Hat Czech
+### Peter Schiffer, Red Hat Czech
 
+---
+
+class: center, middle
+
+# Do I hear Cloud again?
+
+---
+
+background-image: url(img/cloud-good.jpg)
+
+---
+
+background-image: url(img/cloud-bad.jpg)
+
+???
+
+No clear specification what cloud means, but there is a plenty
+of requirements for cloud applications.
+
+---
+
+# Brief history of cloud computing
+
+* 2006 - Amazon Web Services
+* 2010 - Microsoft Azure
+* 2010 - OpenStack
+* 2011 - OpenShift
+* 2011 - Google Cloud Platform
+
+## In general
+
+* When single server stops being enough
+* with increasing demand for faster deployment
+* with increasing demand for cheaper services
+* with increasing number of technologies
+
+---
+
+# When single server is not enough
+
+* More data
+* Complex operations
+
+--
+
+### Vertical scaling is limited
+
+* Faster CPU
+* More RAM
+* Bigger disk
+
+### Horizontal scaling is not
+
+* Add server
+
+---
+
+# Vertical scaling
+
+### +
+
+* Trivial architecture
+* Simple to implement
+
+### -
+
+* Expensive
+* Hardware failure cause bigger outages
+* Limited
+
+---
+
+# Horizontal scaling
+
+### +
+
+* Theoretically unlimited
+* Cheaper
+* Easier fault-tolerance
+* Easy upgrades
+
+### -
+
+* Complex architecture
+* Harder to implement
+* Bigger footprint
 
     </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    <script src="remark-latest.min.js">
     </script>
     <script>
-      var slideshow = remark.create();
+      var slideshow = remark.create({
+        ratio: '4:3',
+        highlightLines: false
+      });
     </script>
   </body>
 </html>
